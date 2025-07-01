@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: nginx-argocd-02
+  labels:
+    app: nginx02
 spec:
   selector:
-    app: myapp
+    app: nginx02
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
-    

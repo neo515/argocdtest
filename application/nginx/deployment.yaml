@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: nginx-argocd-02
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: myapp
-  replicas: 2
+      app: nginx02
+
   template:
     metadata:
       labels:
-        app: myapp
+        app: nginx02
     spec:
       containers:
-      - name: myapp
-        image: nginx:latest
+      - name: nginx
+        image: nginx:1.14.2
         ports:
         - containerPort: 80

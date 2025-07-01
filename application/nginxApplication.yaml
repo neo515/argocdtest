@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
-  namespace: argocd
+  name: nginx-argocd-02
+  namespace: test
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/neo515/argocd-test.git
+    repoURL: git@github.com:neo515/argocdtest.git
     targetRevision: HEAD
-    path: dev
+    path: application/nginx
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: test
 
   syncPolicy:
     syncOptions:
