@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginx-argocd-02
-  namespace: test
+  namespace: argocd
 spec:
   project: default
 
